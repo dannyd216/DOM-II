@@ -34,7 +34,7 @@
 // MOUSEOVER FUN BUS IMAGE
 
 // DECLARE VAR FOR QUERYSEL TARGET: TARGETING YELLOWBUS
-const bossImg = document.querySelector('#yellowBus')
+const busImg = document.querySelector('#yellowBus')
 
 // CREATE FUNCT TO HANDLE EVENT
 function funBusHover(event) {
@@ -48,7 +48,7 @@ function funBusHover(event) {
 }
 
 // INVOKE THE EVENT BY CALL: PARAM1: WHAT WE CARE ABOUT PARAM2: WHAT FUNCT ARE WE USING/APPLYING
-bossImg.addEventListener('mouseover',funBusHover)
+busImg.addEventListener('mouseover',funBusHover)
 
 // DECLARE FUNCT TO HANDLE EVENT
 function removeBusHover(event) {
@@ -172,7 +172,14 @@ window.addEventListener('resize', resizeWin);
 
 function scrollToEnd(event) {
 
-    window.scrollBy(0, -window.innerHeight);
+/**
+ * BOTH OF THESE METHODS WORK
+ */
+
+
+    // window.scrollBy(0, -window.innerHeight);
+
+    window.scrollBy(0, -9999);
 
 
 }
@@ -192,6 +199,28 @@ document.addEventListener('wheel',scrollToEnd);
 
 
 // * [ ] `select`
+
+//The select event fires when some text has been selected.
+
+// I WANT THE USER TO BE ABLE TO SELECT ANY TEXT AND CREATE A VISIBLE TAG WITH THE SELECTED TEXT
+
+function tagMyText(event) {
+
+    // window.getSelection().toString();
+
+    if (window.getSelection) {
+        
+        console.log(`we are in tagMyText funct`)
+
+        debugger
+        return alert(window.getSelection());
+    }
+
+    // return alert(window.getSelection);
+
+}
+
+document.addEventListener('select', tagMyText);
 
 
 
