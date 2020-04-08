@@ -110,10 +110,25 @@ document.addEventListener('keydown', escKeyPressed)
 
 // * [ ] `load`
 
+// UPON ENTRY AND FULL LOADING OF THE PAGE THE POPUP WILL APPEAR
+
+window.addEventListener('load', (event) => {
+    window.confirm('page is fully loaded. this is the load event');
+  });
+
 
 
 
 // * [ ] `focus`
+
+// WHEN THE MOUSE FOCUSES ON THE LETS GO PHOTO THE PHOTOS SIZE WILL CHANGE
+
+const letsGoImg = document.querySelector('#letsGoPhoto');
+
+letsGoImg.addEventListener('focus', (event) => event.style.backgroundColor) = 'yellow';
+
+
+
 
 
 
@@ -155,13 +170,6 @@ window.addEventListener('resize', resizeWin);
  */
 
 
-// window.scrollTo(0, document.documentElement.clientHeight);
-
-// function scrollToBottom(event) {
-
-//     // page needs to scroll to bottom at event of mousescroll
-
-
 // }
 /**
  * 
@@ -200,32 +208,27 @@ document.addEventListener('wheel',scrollToEnd);
 
 // * [ ] `select`
 
-//The select event fires when some text has been selected.
 
-// I WANT THE USER TO BE ABLE TO SELECT ANY TEXT AND CREATE A VISIBLE TAG WITH THE SELECTED TEXT
 
-function tagMyText(event) {
-
-    // window.getSelection().toString();
-
-    if (window.getSelection) {
-        
-        console.log(`we are in tagMyText funct`)
-
-        debugger
-        return alert(window.getSelection());
-    }
-
-    // return alert(window.getSelection);
-
-}
-
-document.addEventListener('select', tagMyText);
 
 
 
 
 // * [ ] `dblclick`
+
+// have an alert pop us stating user double clicked
+
+function youDoubleClicked(event) {
+
+    return alert(`YOU DOUBLE CLICKED!!!!!!`)
+}
+
+document.addEventListener('dblclick', youDoubleClicked);
+
+
+
+
+
 
 
 // * [ ] Nest two similar events somewhere in the site and prevent the event propagation properly
